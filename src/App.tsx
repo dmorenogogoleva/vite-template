@@ -7,8 +7,11 @@ import { breedsActions } from "./redux/slices/breeds-slice.ts";
 import { imagesActions } from "./redux/slices/images-slice.ts";
 import { useAppDispatch } from "./redux/hooks.ts";
 
-import './App.css'
 import { DogPhoto } from "./components/dog-photo/dog-photo.tsx";
+
+import { NavLink } from "react-router";
+
+import './App.css'
 
 
 function App() {
@@ -32,8 +35,14 @@ function App() {
 
   return (<>
     <h1 className={textCn('rs-h1')}>{title}</h1>
+    <br/>
+
+    <NavLink to="/home">
+      go home
+    </NavLink>
+
     <BreedsList type="list" onClick={onBreedClick}/>
-    <DogPhoto />
+    <DogPhoto/>
   </>)
 }
 
