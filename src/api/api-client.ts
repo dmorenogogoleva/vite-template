@@ -1,11 +1,12 @@
 import axios from 'axios';
-import { Breed } from "./types.ts";
+import {Breed} from "./types.ts";
+import {getAllBreedsMapper} from "./mappers/get-all-breeds-mapper.ts";
 
 const api = 'https://dog.ceo/api/'
 
 export const getAllBreeds = (): Breed[] | any => axios.get(`${api}breeds/list/all `)
   .then(function (response) {
-    return response.data.message;
+    return getAllBreedsMapper(response.data);
   })
   .catch(function (error) {
     // handle error
