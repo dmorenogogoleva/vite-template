@@ -2,4 +2,8 @@
     list-style-type: none;
     height: 300px;
     overflow-y: scroll;
+
+    & li {
+        border-left: 2px solid #535bf2;
+    }
 }

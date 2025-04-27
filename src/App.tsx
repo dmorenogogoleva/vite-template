@@ -21,17 +21,17 @@ function App() {
 
   const getAllBreeds = useCallback(() => {
     dispatch(breedsActions.getAll())
-  }, [])
+  }, [dispatch])
 
   // fetch on load
   useEffect(() => {
     getAllBreeds()
-  }, [])
+  }, [getAllBreeds])
 
   const onBreedClick = useCallback((breed: string) => {
     setTitle(breed);
     dispatch(imagesActions.getImageByBreed(breed))
-  }, [])
+  }, [dispatch])
 
   return (<>
     <h1 className={textCn('rs-h1')}>{title}</h1>

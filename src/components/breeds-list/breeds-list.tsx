@@ -12,7 +12,7 @@ export const BreedsList = ({ type, onClick }: IBreedsList) => {
   const breeds = useAppSelector(state => state.breeds.data) || {};
 
   return type === 'list' ? <ul className="list">
-    {Object.keys(breeds)?.map(breed => <li>
+    {Object.keys(breeds)?.map(breed => <li className="jb-offset-top-4">
       <Button mode="clear" onClick={() => onClick(breed)}>
         {breed}
       </Button>
